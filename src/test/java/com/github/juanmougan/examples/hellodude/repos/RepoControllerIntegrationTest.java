@@ -24,16 +24,28 @@ public class RepoControllerIntegrationTest {
     @Test
     public void givenNotValidOwnerName_whenRegisterRepo_thenReturnBadRequest() throws Exception {
         // GIVEN an invalid input
-        final RepoRequest request = RepoRequest.builder()
-                .build();
+        final RepoDataStructureRequest request = RepoDataStructureRequest.builder().build();
         final String requestBody = objectMapper.writeValueAsString(request);
         // WHEN a repo is registered THEN a 400 error is returned
         mockMvc.perform(
-//                post(String.format("%s/%s", Endpoints.API_PREFIX, Endpoints.REPOS))
                 post(Endpoints.REPOS)
                         .contentType(APPLICATION_JSON)
                         .content(requestBody)
         ).andExpect(status().isBadRequest());
+    }
 
+    @Test
+    public void givenValidOwnerName_whenRegisterRepo_thenReturnCreated() throws Exception {
+        // GIVEN a valid input
+        final RepoDataStructureRequest request = RepoDataStructureRequest.builder()
+                .ownerName("juanmougan")
+                .build();
+        final String requestBody = objectMapper.writeValueAsString(request);
+        // WHEN a repo is registered THEN a 201 is returned
+        mockMvc.perform(
+                post(Endpoints.REPOS)
+                        .contentType(APPLICATION_JSON)
+                        .content(requestBody)
+        ).andExpect(status().isCreated());
     }
 }

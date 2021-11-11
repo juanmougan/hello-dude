@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RepoService {
-    public RepoResponse create(final RepoRequest request) {
+    public RepoResponse create(final RepoDataStructureRequest request) {
         // TODO real service here
         return RepoResponse.builder()
                 .ownerName(request.getOwnerName())
