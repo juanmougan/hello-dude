@@ -15,7 +15,8 @@ import javax.validation.Valid;
 public class RepoController {
     private final RepoService repoService;
 
-    @PostMapping(Endpoints.REPOS)
+    @PostMapping(path = Endpoints.REPOS, produces = {"application/json", "application/vnd.myname.v1+json"},
+            consumes = "application/vnd.myname.v1+json")
     @ResponseStatus(HttpStatus.CREATED)
     public RepoResponse registerRepo(@Valid @RequestBody final RepoDataStructureRequest request) {
         log.info("Got request: " + request);
