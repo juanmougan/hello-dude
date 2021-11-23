@@ -28,8 +28,9 @@ Hello World using Mongo plus an external API
   - Javax validators: https://spring.io/guides/gs/validating-form-input/
   - Using Hibernate: https://www.baeldung.com/spring-boot-bean-validation
   - Custom validators: https://www.baeldung.com/spring-mvc-custom-validator
-- RestTemplate: https://spring.io/guides/gs/consuming-rest/
-  - Or Feign? https://github.com/OpenFeign/feign
+  - WebClient: https://www.baeldung.com/spring-5-webclient
+    - Or Feign? https://github.com/OpenFeign/feign
 - Spring Data MongoDB: https://www.baeldung.com/spring-data-mongodb-tutorial
 - REST API: https://spring.io/guides/tutorials/rest/
+- Liquibase: https://www.baeldung.com/liquibase-refactor-schema-of-java-app
 - TODO testing
